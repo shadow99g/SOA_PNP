@@ -41,6 +41,12 @@
 
                 <p:column>
                     <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{inf.id}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
                         <h:outputText value="Nombre"/>
                     </f:facet>
                     <h:outputText value="#{inf.nombre}" />
@@ -51,6 +57,24 @@
                         <h:outputText value="Apellido"/>
                     </f:facet>
                     <h:outputText value="#{inf.apellido}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Latitud"/>
+                    </f:facet>
+                    <h:outputText value="#{inf.lat}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Longitud"/>
+                    </f:facet>
+                    <h:outputText value="#{inf.lon}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Documento  "/>
+                    </f:facet>
+                    <h:outputText value="#{inf.rj}" />
                 </p:column>
 
             </p:dataTable>

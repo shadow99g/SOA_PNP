@@ -11,8 +11,8 @@ package Model;
  */
 public class model {
     
-    private String id,nombre,apellido,rj;
-    private double lat,lon;
+    public String id,nombre,apellido,rj;
+    public double lat,lon;
     
     public model(String id,String nom,String ape,double lat,double lon,String rj){
         
@@ -24,6 +24,8 @@ public class model {
         this.rj=rj;
     
     }; 
+    
+    public model(){};
 
     public String getId() {
         return id;
@@ -72,6 +74,8 @@ public class model {
     public void setLon(double lon) {
         this.lon = lon;
     }
+
+    
     
     
     
