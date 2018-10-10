@@ -2,8 +2,12 @@
 <html>
   <head>
     <title>Mapa</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link href="Css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+
+        <meta charset="utf-8"/>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -16,19 +20,7 @@
         margin: 0;
         padding: 0;
       }
-      .btn {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-/* Darker background on mouse-over */
-.btn:hover {
-    background-color: RoyalBlue;
-}
+      
 body { background-color:  #BDBDBD; }
     </style>
   </head>
@@ -82,7 +74,7 @@ map = new google.maps.Map(document.getElementById('map'), {
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5jlueIk_UWw2Pv4OjA2xtgnoXnI5YmVA&libraries=drawing&callback=initMap">
     </script>
 <br>
-<a class="btn" href="index.xhtml">Listado de RJ</a>
+<!--<a class="btn btn-success" href="index.xhtml">Listado de RJ</a>-->
 <br><br>
   </body>
 </html>
