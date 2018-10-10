@@ -32,49 +32,31 @@
     </style>
 
     <h:body>
-        <form>
+        <form id="form1" name="form1" method="post" action="prueba.php">
             <br/>   
             <p:dataTable id="tbl" var="inf" value="#{controllerInfrac.lista}"
                          class="table table-striped"
                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                          paginator="true" rows="10">
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="ID"/>
-                    </f:facet>
+                <p:column headerText="ID">
                     <h:outputText value="#{inf.id}" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Nombre"/>
-                    </f:facet>
+                <p:column headerText="Nombre">
                     <h:outputText value="#{inf.nombre}" />
                 </p:column>
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Apellido"/>
-                    </f:facet>
+                <p:column headerText="Apellido">
                     <h:outputText value="#{inf.apellido}" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Latitud"/>
-                    </f:facet>
-                    <h:outputText value="#{inf.lat}" />
+                <p:column headerText="Latitud">
+                    <h:outputText id="lat" value="#{inf.lat}" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Longitud"/>
-                    </f:facet>
-                    <h:outputText value="#{inf.lon}" />
+                <p:column headerText="Longitud">
+                    <h:outputText id="lon" value="#{inf.lon}" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Documento  "/>
-                    </f:facet>
-                    <h:outputText value="#{inf.rj}" />
+                <p:column headerText="Documento">
+                    <a class="btn" href="pdf/#{inf.rj}.pdf" target="_blank">#{inf.rj}</a>
                 </p:column>
 
             </p:dataTable>

@@ -31,18 +31,13 @@
 }
 body { background-color:  #BDBDBD; }
     </style>
-
   </head>
   <body>
     <div id="map"></div>
     <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
+      
       var map, infoWindow;
-      function initMap() {
-        
+      function initMap(){
         infoWindow = new google.maps.InfoWindow;
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -61,7 +56,7 @@ map = new google.maps.Map(document.getElementById('map'), {
 
             directionsService.route({
             origin: { lat: position.coords.latitude, lng: position.coords.longitude },//db waypoint start
-            destination: { lat: -13.078075, lng: -76.387277 },//db waypoint end
+            destination: { lat: -13.076908, lng: -76.389021 },//db waypoint end
             travelMode: google.maps.TravelMode.WALKING
         }, function (response, status) {
             if (status === google.maps.DirectionsStatus.OK) {
@@ -86,7 +81,6 @@ map = new google.maps.Map(document.getElementById('map'), {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5jlueIk_UWw2Pv4OjA2xtgnoXnI5YmVA&libraries=drawing&callback=initMap">
     </script>
-
 <br>
 <a class="btn" href="index.xhtml">Listado de RJ</a>
 <br><br>

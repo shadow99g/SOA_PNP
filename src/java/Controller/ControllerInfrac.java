@@ -12,6 +12,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 
 /**
  *
@@ -23,6 +24,11 @@ public class ControllerInfrac implements Serializable {
 
     List<model> lista =new ArrayList<>();
     dao cc= new dao();
+    
+    @PostConstruct
+    public void init(){
+    agregar();
+    }
     
     public void agregar()
     {
