@@ -29,28 +29,30 @@
 
         <script>
             var map, infoWindow;
-           
-            function getParameterByName(Parameter) {
-                var FullUrl=window.location.search.substring(1);
-                var ParametersArray = FullUrl.split('&');
-                for (var i=0; i<ParametersArray.length; i++)
-                {
-                    var CurrentParameter = ParametersArray[i].split('=');
-                    if (CurrentParameter[0] === Parameter)
-                    {
-                        return CurrentParameter[1];
+
+
+
+            function obtenerValorParametro(sParametroNombre) {
+                var sPaginaURL = window.location.search.substring(1);
+                var sURLVariables = sPaginaURL.split('&');
+                for (var i = 0; i < sURLVariables.length; i++) {
+                    var sParametro = sURLVariables[i].split('=');
+                    if (sParametro[0] == sParametroNombre) {
+                        return sParametro[1];
                     }
                 }
+                return null;
             }
+            var lt = obtenerValorParametro("lt");
+            var ln = obtenerValorParametro("ln");
+            console.log(lt, "", ln);
             
-            var lat = getParameterByName('lt');
-            var lon= getParameterByName('ln');
 
             function initMap() {
                 infoWindow = new google.maps.InfoWindow;
                 var directionsService = new google.maps.DirectionsService;
                 var directionsDisplay = new google.maps.DirectionsRenderer;
-                // Try HTML5 geolocation.
+                                // Try HTML5 geolocation.
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -65,7 +67,7 @@
 
                         directionsService.route({
                             origin: {lat: position.coords.latitude, lng: position.coords.longitude}, //db waypoint start
-                            destination: {lat: lat, lng: lon}, //db waypoint end
+                            destination: { lat: parseFloat(lt), lng: parseFloat(ln) }, //db waypoint end
                             travelMode: google.maps.TravelMode.WALKING
                         }, function (response, status) {
                             if (status === google.maps.DirectionsStatus.OK) {
