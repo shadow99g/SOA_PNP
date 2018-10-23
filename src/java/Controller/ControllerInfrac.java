@@ -34,7 +34,6 @@ public class ControllerInfrac implements Serializable {
     {
         try {
             lista = cc.array();
-            System.out.println("paso :"+lista);
         } catch (Exception e) {
             System.out.println("alerta: "+e);
         }
