@@ -35,6 +35,7 @@
 
                 <p:column headerText="ID" footerText="ID">
                     <h:outputText value="#{inf.id}" />
+                    
                 </p:column>
                 <p:column headerText="Nombre" footerText="Nombre">
                     <h:outputText value="#{inf.nombre}" />
@@ -55,7 +56,7 @@
                     </center>
                 </p:column>
                 <p:column  headerText="Localizar" footerText="Localizar">
-                    <p:link  class="btn btn-light" outcome="prueba.php" value="Ruta">
+                    <p:link  class="btn btn-light" outcome="prueba.php" target="_blank" value="Ruta">
                         <f:param name="lt" value="#{inf.lat}" />
                         <f:param name="ln" value="#{inf.lon}" />
                     </p:link>
@@ -66,7 +67,7 @@
 
             </p:dataTable>
 
-            <p:commandButton value="Actualiza Tabla" actionListener="#{controllerInfrac.agregar()}" update="tbl"/>
+            <!--<p:commandButton value="Actualiza Tabla" actionListener="#{controllerInfrac.agregar()}" update="tbl"/>-->
 
 
         </form>

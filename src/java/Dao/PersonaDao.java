@@ -5,7 +5,6 @@
  */
 package Dao;
 
-import Model.modelInfractor;
 import Model.modelPersona;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,25 +24,25 @@ public class PersonaDao extends Conexion {
         ResultSet rs;
 
         try {
-            String sql = "";
+            String sql = "SELECT * FROM PERSONA";
             PreparedStatement ps = this.getCn().prepareCall(sql);
             rs = ps.executeQuery();
             lista = new ArrayList<>();
             modelPersona Model;
             while (rs.next()) {
                 Model = new modelPersona();
-                Model.setCODPER(rs.getString(""));
-                Model.setNOMPER(rs.getString(""));
-                Model.setAPEPATPER(rs.getString(""));
-                Model.setAPEMATPER(rs.getString(""));
-                Model.setDNIPER(rs.getString(""));         
-                Model.setFECNACPER(rs.getString(""));         
-                Model.setDOMPER(rs.getString(""));         
-                Model.setESTCOMPER(rs.getString(""));         
-                Model.setTIPOPER(rs.getString(""));         
-                Model.setESTPER(rs.getString(""));         
-                Model.setlATPER(rs.getString(""));         
-                Model.setLONPER(rs.getString(""));         
+                Model.setCODPER(rs.getString("CODPER"));
+                Model.setNOMPER(rs.getString("NOMPER"));
+                Model.setAPEPATPER(rs.getString("APEPATPER"));
+                Model.setAPEMATPER(rs.getString("APEMATPER"));
+                Model.setDNIPER(rs.getString("DNIPER"));         
+                Model.setFECNACPER(rs.getString("FECNACPER"));         
+                Model.setDOMPER(rs.getString("DOMPER"));         
+                Model.setESTCOMPER(rs.getString("ESTCOMPER"));         
+                Model.setTIPOPER(rs.getString("TIPOPER"));         
+                Model.setESTPER(rs.getString("ESTPER"));         
+                Model.setlATPER(rs.getString("LATPER"));         
+                Model.setLONPER(rs.getString("LONPER"));         
                 lista.add(Model);
             }
             return lista;

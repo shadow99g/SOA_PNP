@@ -5,7 +5,6 @@
  */
 package Dao;
 
-import Model.model;
 import Model.modelInfractor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,18 +25,17 @@ public class InfractorDao extends Conexion{
         ResultSet rs;
 
         try {
-            String sql = "";
+            String sql = "SELECT * FROM INFRACTOR";
             PreparedStatement ps = this.getCn().prepareCall(sql);
             rs = ps.executeQuery();
             lista = new ArrayList<>();
             modelInfractor Model;
             while (rs.next()) {
                 Model = new modelInfractor();
-                Model.setCODINFRAC(rs.getString(""));
-                Model.setPNAC(rs.getString(""));
-                Model.setPBAU(rs.getString(""));
-                Model.setBMILI(rs.getString(""));
-                Model.setOTRO(rs.getString(""));         
+                Model.setCODINFRAC(rs.getString("CODINF"));
+                Model.setPARNACINF(rs.getString("PARNACINF"));
+                Model.setPARBAUINF(rs.getString("PARBAUINF"));
+                Model.setLIBMILINF(rs.getString("LIBMILINF"));
                 lista.add(Model);
             }
             return lista;

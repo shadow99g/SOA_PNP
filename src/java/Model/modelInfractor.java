@@ -11,7 +11,7 @@ package Model;
  */
 public class modelInfractor {
     
-    String CODINFRAC,PNAC,PBAU,BMILI,OTRO;
+    String CODINFRAC,PARNACINF,PARBAUINF,LIBMILINF,CODPER_ADO;
 
     public String getCODINFRAC() {
         return CODINFRAC;
@@ -21,36 +21,40 @@ public class modelInfractor {
         this.CODINFRAC = CODINFRAC;
     }
 
-    public String getPNAC() {
-        return PNAC;
+    public String getPARNACINF() {
+        return PARNACINF;
     }
 
-    public void setPNAC(String PNAC) {
-        this.PNAC = PNAC;
+    public void setPARNACINF(String PARNACINF) {
+        this.PARNACINF = PARNACINF;
     }
 
-    public String getPBAU() {
-        return PBAU;
+    public String getPARBAUINF() {
+        return PARBAUINF;
     }
 
-    public void setPBAU(String PBAU) {
-        this.PBAU = PBAU;
+    public void setPARBAUINF(String PARBAUINF) {
+        this.PARBAUINF = PARBAUINF;
     }
 
-    public String getBMILI() {
-        return BMILI;
+    public String getLIBMILINF() {
+        return LIBMILINF;
     }
 
-    public void setBMILI(String BMILI) {
-        this.BMILI = BMILI;
+    public void setLIBMILINF(String LIBMILINF) {
+        this.LIBMILINF = LIBMILINF;
     }
 
-    public String getOTRO() {
-        return OTRO;
+    public String getCODPER_ADO() {
+        return CODPER_ADO;
     }
 
-    public void setOTRO(String OTRO) {
-        this.OTRO = OTRO;
+    public void setCODPER_ADO(String CODPER_ADO) {
+        this.CODPER_ADO = CODPER_ADO;
     }
+    
+    
+
+    
     
 }

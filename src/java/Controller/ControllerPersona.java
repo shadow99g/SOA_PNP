@@ -6,7 +6,7 @@
 package Controller;
 
 import Dao.dao;
-import Model.model;
+import Model.modelPersona;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -16,46 +16,32 @@ import javax.annotation.PostConstruct;
 
 /**
  *
- * @author jordy
+ * @author PC
  */
-@Named(value = "controllerInfrac")
+@Named(value = "controllerPersona")
 @SessionScoped
-public class ControllerInfrac implements Serializable {
+public class ControllerPersona implements Serializable {
 
-    List<model> lista =new ArrayList<>();
+    List<modelPersona> lista = new ArrayList<>();
     dao cc= new dao();
     
-    @PostConstruct
-    public void init(){
-    agregar();
-    }
-    
-    public void agregar()
-    {
-        try {
-            lista = cc.array();
-        } catch (Exception e) {
-            System.out.println("alerta: "+e);
-        }
-       
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-/*- encapsulado de listas -*/
-    public List<model> getLista() {
+   @PostConstruct
+   public void init(){
+   
+   }
+
+   
+   
+   
+   
+   
+   
+   /*- encapsulado de listas -*/
+    public List<modelPersona> getLista() {
         return lista;
     }
 
-    public void setLista(List<model> lista) {
+    public void setLista(List<modelPersona> lista) {
         this.lista = lista;
     }
 
@@ -65,7 +51,5 @@ public class ControllerInfrac implements Serializable {
 
     public void setCc(dao cc) {
         this.cc = cc;
-    }
-    
-    
+    } 
 }
