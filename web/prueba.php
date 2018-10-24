@@ -68,7 +68,7 @@
                         directionsService.route({
                             origin: {lat: position.coords.latitude, lng: position.coords.longitude}, //db waypoint start
                             destination: { lat: parseFloat(lt), lng: parseFloat(ln) }, //db waypoint end
-                            travelMode: google.maps.TravelMode.WALKING
+                            travelMode: google.maps.TravelMode.DRIVING
                         }, function (response, status) {
                             if (status === google.maps.DirectionsStatus.OK) {
                                 directionsDisplay.setDirections(response);
