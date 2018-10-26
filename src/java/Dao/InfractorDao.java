@@ -48,6 +48,21 @@ public class InfractorDao extends Conexion{
     
     
     
+    /*
+    codigo sql 
     
+    select ficha_integral.codinf,persona.codper,persona.nomper from ficha_integral
+inner join
+persona on persona.codper = ficha_integral.codper_mad
+inner join
+persona on persona.codper = ficha_integral.codper_pad
+inner join
+persona on persona.codper = ficha_integral.codper_par;
+
+select persona.codper,persona.nomper,persona.apepatper,persona.apematper,persona_direccion.latdir,persona_direccion.londir,persona_direccion.refper from persona
+inner join
+persona_direccion on persona_direccion.codper_ado = persona.codper;
+    
+    */
     
 }
