@@ -31,31 +31,31 @@
             <br/>   
             <p:dataTable id="tbl" var="inf" value="#{controllerInfrac.lista}"
                          class="table table-striped table-dark"
-                         scrollable="true" scrollHeight="350">
+                         scrollable="true" scrollHeight="350" rows="15" paginator="true">
 
-                <p:column headerText="ID" footerText="ID">
+                <p:column headerText="ID" >
                     <h:outputText value="#{inf.id}" />
                     
                 </p:column>
-                <p:column headerText="Nombre" footerText="Nombre">
+                <p:column headerText="Nombre" >
                     <h:outputText value="#{inf.nombre}" />
                 </p:column>
 
-                <p:column headerText="Apellido" footerText="Apellido">
+                <p:column headerText="Apellido" >
                     <h:outputText value="#{inf.apellido}" />
                 </p:column>
-                <p:column headerText="Latitud" footerText="Latitud">
+                <p:column headerText="Latitud">
                     <h:outputText id="lat" value="#{inf.lat}" />
                 </p:column>
-                <p:column headerText="Longitud" footerText="Longitud">
+                <p:column headerText="Longitud" >
                     <h:outputText id="lon" value="#{inf.lon}" />
                 </p:column>
-                <p:column  headerText="Documento" footerText="Documento">
+                <p:column  headerText="Documento">
                     <center>
                         <a class="btn btn-info" href="pdf/#{inf.rj}.pdf" target="_blank">#{inf.rj}</a>
                     </center>
                 </p:column>
-                <p:column  headerText="Localizar" footerText="Localizar">
+                <p:column  headerText="Localizar" >
                     <p:link  class="btn btn-light" outcome="prueba.php" target="_blank" value="Ruta">
                         <f:param name="lt" value="#{inf.lat}" />
                         <f:param name="ln" value="#{inf.lon}" />
