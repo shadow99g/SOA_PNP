@@ -91,9 +91,6 @@
         </script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5jlueIk_UWw2Pv4OjA2xtgnoXnI5YmVA&libraries=drawing&callback=initMap">
-        </script>
-        <br>
-        <!--<a class="btn btn-success" href="index.xhtml">Listado de RJ</a>-->
-        <br><br>
+        </script>       
     </body>
 </html>

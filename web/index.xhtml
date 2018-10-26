@@ -9,7 +9,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link href="Css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+        <link href="Css/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
 
         <meta charset="utf-8"></meta>
@@ -20,12 +20,10 @@
     </style>
 
     <h:body>
-        <br/>
-        <br/>
-        <br/>
-        <center>
-            <h2>Lista de Resoluciones</h2>
-        </center>
+        
+        <dir class="container">
+            <h2 class="text-center">Lista de Resoluciones</h2>
+        </dir>
         <br/>
         <form id="form1" class="form-inline">
             <br/>   
@@ -33,47 +31,42 @@
                          class="table table-striped table-dark"
                          scrollable="true" scrollHeight="350" rows="15" paginator="true">
 
-                <p:column headerText="ID" >
+                <p:column style="width:16px" class="table-warning">
+                    <p:rowToggler/>
+                </p:column>
+                <p:column headerText="ID" class="table-warning" >
                     <h:outputText value="#{inf.id}" />
                     
                 </p:column>
-                <p:column headerText="Nombre" >
+                <p:column headerText="Nombre" class="table-warning" >
                     <h:outputText value="#{inf.nombre}" />
                 </p:column>
 
-                <p:column headerText="Apellido" >
+                <p:column headerText="Apellido" class="table-warning" >
                     <h:outputText value="#{inf.apellido}" />
                 </p:column>
-                <p:column headerText="Latitud">
-                    <h:outputText id="lat" value="#{inf.lat}" />
-                </p:column>
-                <p:column headerText="Longitud" >
-                    <h:outputText id="lon" value="#{inf.lon}" />
-                </p:column>
-                <p:column  headerText="Documento">
+                <p:column  headerText="Documento" class="table-warning">
                     <center>
                         <a class="btn btn-info" href="pdf/#{inf.rj}.pdf" target="_blank">#{inf.rj}</a>
                     </center>
                 </p:column>
-                <p:column  headerText="Localizar" >
-                    <p:link  class="btn btn-light" outcome="prueba.php" target="_blank" value="Ruta">
+                
+<p:rowExpansion>
+            <p:panelGrid  columns="4">
+                
+                    <h:outputText value="Apoderado :" />
+                    <h:outputText value="#{inf.nombre}" />
+                    <h:outputText value="#{inf.apellido}" />
+                
+                    <p:link  class="btn btn-warning" outcome="prueba.php" target="_blank" value="Ruta">
                         <f:param name="lt" value="#{inf.lat}" />
                         <f:param name="ln" value="#{inf.lon}" />
-                    </p:link>
-                    <!--<center>s
-                        <a class="btn btn-light" href="prueba.php" target="_blank"><img src="Img/view.png"/></a>
-                    </center>-->
-                </p:column>
-
+                    </p:link>                
+            </p:panelGrid>
+        </p:rowExpansion>
             </p:dataTable>
-
-            <!--<p:commandButton value="Actualiza Tabla" actionListener="#{controllerInfrac.agregar()}" update="tbl"/>-->
-
-
         </form>
         <br/>
-        <!--<a class="btn btn-success" href="prueba.php">Ruta de Adolescente</a>-->
     </h:body>
-
 </html>
 
