@@ -20,52 +20,36 @@
     </style>
 
     <h:body>
-        
+
         <dir class="container">
             <h2 class="text-center">Lista de Resoluciones</h2>
         </dir>
         <br/>
-        <form id="form1" class="form-inline">
+        <h:form id="form1" class="form-inline">
             <br/>   
-            <p:dataTable id="tbl" var="inf" value="#{controllerInfrac.lista}"
-                         class="table table-striped table-dark"
-                         scrollable="true" scrollHeight="350" rows="15" paginator="true">
+            <p:commandButton value="lista" actionListener="#{controllerInfrac.agregar()}"/>
 
-                <p:column style="width:16px" class="table-warning">
-                    <p:rowToggler/>
+            <p:dataTable var="inf" value="#{controllerInfrac.lista}" sortBy="#{inf.CODINFRAC}" expandableRowGroups="true">
+                <p:headerRow>
+                    <p:column colspan="3">
+                        <h:outputText value="#{inf.CODINFRAC}" />
+                    </p:column>
+                </p:headerRow>
+                <p:column headerText="familiar">
+                    <h:outputText value="#{inf.PARNACINF}" />
                 </p:column>
-                <p:column headerText="ID" class="table-warning" >
-                    <h:outputText value="#{inf.id}" />
-                    
+                <p:column headerText="referencia">
+                    <h:outputText value="#{inf.PARBAUINF}" />
                 </p:column>
-                <p:column headerText="Nombre" class="table-warning" >
-                    <h:outputText value="#{inf.nombre}" />
-                </p:column>
-
-                <p:column headerText="Apellido" class="table-warning" >
-                    <h:outputText value="#{inf.apellido}" />
-                </p:column>
-                <p:column  headerText="Documento" class="table-warning">
-                    <center>
-                        <a class="btn btn-info" href="pdf/#{inf.rj}.pdf" target="_blank">#{inf.rj}</a>
-                    </center>
-                </p:column>
-                
-<p:rowExpansion>
-            <p:panelGrid  columns="4">
-                
-                    <h:outputText value="Apoderado :" />
-                    <h:outputText value="#{inf.nombre}" />
-                    <h:outputText value="#{inf.apellido}" />
-                
+                <p:column>
                     <p:link  class="btn btn-warning" outcome="prueba.php" target="_blank" value="Ruta">
-                        <f:param name="lt" value="#{inf.lat}" />
-                        <f:param name="ln" value="#{inf.lon}" />
-                    </p:link>                
-            </p:panelGrid>
-        </p:rowExpansion>
+                        <f:param name="lt" value="#{inf.LIBMILINF}" />
+                        <f:param name="ln" value="#{inf.CODPER_ADO}" />
+                    </p:link> 
+                </p:column>
             </p:dataTable>
-        </form>
+
+        </h:form>
         <br/>
     </h:body>
 </html>

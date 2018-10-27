@@ -5,8 +5,10 @@
  */
 package Controller;
 
-import Dao.dao;
+import Dao.InfractorDao;
+
 import Model.model;
+import Model.modelInfractor;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -22,8 +24,10 @@ import javax.annotation.PostConstruct;
 @SessionScoped
 public class ControllerInfrac implements Serializable {
 
-    List<model> lista =new ArrayList<>();
-    dao cc= new dao();
+ //   List<model> lista =new ArrayList<>();
+    List<modelInfractor> lista ;
+   
+    InfractorDao inf;
     
     @PostConstruct
     public void init(){
@@ -33,39 +37,27 @@ public class ControllerInfrac implements Serializable {
     public void agregar()
     {
         try {
-            lista = cc.array();
+            inf = new InfractorDao();
+          //  lista = cc.array();
+          lista = inf.listarHab();
         } catch (Exception e) {
             System.out.println("alerta: "+e);
         }
        
     }
+
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-/*- encapsulado de listas -*/
-    public List<model> getLista() {
+
+    public List<modelInfractor> getLista() {
         return lista;
     }
 
-    public void setLista(List<model> lista) {
+/*- encapsulado de listas -*/
+    public void setLista(List<modelInfractor> lista) {    
         this.lista = lista;
     }
 
-    public dao getCc() {
-        return cc;
-    }
-
-    public void setCc(dao cc) {
-        this.cc = cc;
-    }
+    
     
     
 }

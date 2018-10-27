@@ -25,17 +25,27 @@ public class InfractorDao extends Conexion{
         ResultSet rs;
 
         try {
-            String sql = "SELECT * FROM INFRACTOR";
+            String sql = "Select concat (adolecente.nomper ,concat( ' ', concat (adolecente.apepatper,concat(' ',adolecente.apematper)))) as ad,\n" +
+"    concat (familiar.nomper ,concat( ' ', concat (familiar.apepatper,concat(' ',familiar.apematper)))) as fam,\n" +
+"    persona_direccion.refper,\n" +
+"    persona_direccion.latdir,\n" +
+"    persona_direccion.londir\n" +
+"    \n" +
+"from Persona Adolecente\n" +
+"inner join infractor on adolecente.codper = infractor.codper_ado\n" +
+"inner join persona_direccion on infractor.codinf = persona_direccion.codinf\n" +
+"inner join Persona Familiar on persona_direccion.codper = familiar.codper";
             PreparedStatement ps = this.getCn().prepareCall(sql);
             rs = ps.executeQuery();
             lista = new ArrayList<>();
             modelInfractor Model;
             while (rs.next()) {
                 Model = new modelInfractor();
-                Model.setCODINFRAC(rs.getString("CODINF"));
-                Model.setPARNACINF(rs.getString("PARNACINF"));
-                Model.setPARBAUINF(rs.getString("PARBAUINF"));
-                Model.setLIBMILINF(rs.getString("LIBMILINF"));
+                Model.setCODINFRAC(rs.getString("ad"));
+                Model.setPARNACINF(rs.getString("fam"));
+                Model.setPARBAUINF(rs.getString("refper"));
+                Model.setLIBMILINF(rs.getString("latdir"));
+                Model.setCODPER_ADO(rs.getString("londir"));                
                 lista.add(Model);
             }
             return lista;
